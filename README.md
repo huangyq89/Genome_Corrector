@@ -8,13 +8,8 @@
     
     python ../Genome_Corrector test_genome.fa test_annotation.gtf test_sequence.fasta output_genome.fa output_annotation.gtf
     
-接收的参数以此为`待更新的参考基因组`、`待更新的注释文件`、`用于更新的测序结果`、`更新后的参考基因组`和`更新后的注释文件`。
+接收的参数依次为`待更新的参考基因组`、`待更新的注释文件`、`用于更新的测序结果`、`更新后的参考基因组`和`更新后的注释文件`。
 
 ## 原理
 
-### makeblastdb
-
-### splign
-
-
-采用的是屏蔽（以N替代）原有序列并直接添加新序列的策略（可以防止替换出现错误导致基因组错位），进而在添加新注释的时也无需删除原有注释。
+`Genome Corrector`首先调用自带的`splign`（下载自NCBI），确定用于更新的测序结果在参考基因组中的位置，并生成`output.splign`文件；接下来`mask.py`根据`output.splign`中的结果屏蔽（以N替代）参考基因组中原有的序列；最后`add_genome.py`在参考基因组末尾添加新序列，`add_annotation.py`在注释文件末尾添加新序列的注释。
