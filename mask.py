@@ -68,7 +68,7 @@ def sortline(seq):
             new_k += chunk + '\n'
         seq[seq.index(k)] = new_k
 splign_result = 'output.splign'
-genome = 'Danio_rerio.GRCz11.dna.alt.fa'
+genome = 'test_genome.fa'
 mask(splign_result, genome)
 
 
