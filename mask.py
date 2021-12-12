@@ -31,7 +31,7 @@ def mask(splign_result, genome):
                     new[start-1:end] = 'N'*length
                     seq[num] = ''.join(new)
     sortline(seq)
-    f = open('new.txt', 'w')
+    f = open('output_genome.fa', 'w')
     i = 0
     while i < len(index):
         f.writelines('>' + index[i] + '\n')
