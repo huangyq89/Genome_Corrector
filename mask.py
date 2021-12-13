@@ -1,7 +1,7 @@
 import re
-def mask(splign_result, genome):
+def mask(genome):
     readfasta(genome)
-    f = open(splign_result, 'r')
+    f = open('splign_result.txt', 'r')
     a = f.readlines()
     f.close()
     for line in a:
@@ -31,7 +31,7 @@ def mask(splign_result, genome):
                     new[start-1:end] = 'N'*length
                     seq[num] = ''.join(new)
     sortline(seq)
-    f = open('output_genome.fa', 'w')
+    f = open('mask_result.txt', 'w')
     i = 0
     while i < len(index):
         f.writelines('>' + index[i] + '\n')
@@ -67,8 +67,3 @@ def sortline(seq):
         for chunk in chunkstring(seq[seq.index(k)], 60):
             new_k += chunk + '\n'
         seq[seq.index(k)] = new_k
-splign_result = 'output.splign'
-genome = 'test_genome.fa'
-mask(splign_result, genome)
-
-
