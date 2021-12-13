@@ -70,6 +70,6 @@ def add_gff(sequence_file, gff_file):
                          chromo + '\thyq\tCDS\t' + start + '\t' + end + '\t.\t+\t0\tID=cds-' + gene_name + \
                          'Parent=rna-' + gene_name + ';Dbxref=' + gene_name + ';Name=' + gene_name + \
                          'gbkey=CDS;gene=' + gene_name + ';gene=' + gene_name + ';product=' + gene_name + \
-                         ';protein_id=' + gene_name + '\n' + \
+                         ';protein_id=' + gene_name + '\n'
             f.writelines(line_parse)
     f.close()
