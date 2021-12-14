@@ -6,7 +6,7 @@
 
 在Linux命令行执行：
 
-    git clone https://github.com/huangyq89/Genome_Corrector.git
+    git clone git://github.com/huangyq89/Genome_Corrector.git
 
 打开测试文件所在目录`../Genome_Corrector/test/`，在命令行执行以下命令：
     
