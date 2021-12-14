@@ -4,6 +4,10 @@
 
 ## 使用方法
 
+在Linux命令行执行：
+
+    git clone https://github.com/huangyq89/Genome_Corrector.git
+
 打开测试文件所在目录`../Genome_Corrector/test/`，在命令行执行以下命令：
     
     python ../Genome_Corrector test_genome.fa test_annotation.gtf test_sequence.fasta output_genome.fa output_annotation.gtf
