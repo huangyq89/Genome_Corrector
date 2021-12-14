@@ -16,4 +16,4 @@
 
 ## 原理
 
-`Genome Corrector`首先调用自带的`splign`（下载自NCBI），确定用于更新的测序结果在参考基因组中的位置，并生成`output.splign`文件；接下来`mask.py`根据`output.splign`中的结果屏蔽（以N替代）参考基因组中原有的序列；最后`add_genome.py`在参考基因组末尾添加新序列，`add_annotation.py`在注释文件末尾添加新序列的注释。
+`Genome Corrector`首先调用自带的`splign`（下载自NCBI），确定用于更新的测序结果在参考基因组中的位置，并生成`output.splign`文件；接下来`mask.py`根据`output.splign`中的结果屏蔽（以K替代）参考基因组中原有的序列；最后`add_genome.py`在参考基因组末尾添加新序列，`add_annotation.py`在注释文件末尾添加新序列的注释。
