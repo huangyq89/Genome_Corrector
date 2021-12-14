@@ -1,7 +1,7 @@
 import re
 def mask(genome):
     readfasta(genome)
-    f = open('splign_result.txt', 'r')
+    f = open('output.splign', 'r')
     a = f.readlines()
     f.close()
     for line in a:
