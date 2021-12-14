@@ -1,16 +1,19 @@
+import re
+import os
+
 def add_annotation(input_file, output_file):
     if ".gtf" in output_file:
-        add_gtf(input_file, output_file)
+        add_gtf(input_file)
     elif ".gff" in output_file:
-        add_gff(input_file, output_file)
+        add_gff(input_file)
 
-def add_gtf(sequence_file, gtf_file):
+def add_gtf(sequence_file):
     sentence = 'awk \'/^>/{if (l!=\"\") print l; print; l=0; next}{l+=length($0)}END{print l}\' ' + sequence_file + ' > sequence_read.txt'
     os.system(sentence)
     f = open('sequence_read.txt', 'r')
     a = f.readlines()
     f.close()
-    f = open(gtf_file, 'a')
+    f = open('annotation.txt', 'a')
     for line in a:
         if re.match("^>", line) is not None:
             chromo = re.findall(r'>(.*?)\s', line)[0]
@@ -41,13 +44,13 @@ def add_gtf(sequence_file, gtf_file):
             f.writelines(line_parse)
     f.close()
 
-def add_gff(sequence_file, gff_file):
+def add_gff(sequence_file):
     sentence = 'awk \'/^>/{if (l!=\"\") print l; print; l=0; next}{l+=length($0)}END{print l}\' ' + sequence_file + ' > sequence_read.txt'
     os.system(sentence)
     f = open('sequence_read.txt', 'r')
     a = f.readlines()
     f.close()
-    f = open(gff_file, 'a')
+    f = open('annotation.txt', 'a')
     for line in a:
         if re.match("^>", line) is not None:
             chromo = line[1:-1]
