@@ -28,7 +28,7 @@ def mask(genome):
                     global seq
                     for s in seq[num]:
                         new.append(s)
-                    new[start-1:end] = 'N'*length
+                    new[start-1:end] = 'K'*length
                     seq[num] = ''.join(new)
     sortline(seq)
     f = open('mask_result.txt', 'w')
